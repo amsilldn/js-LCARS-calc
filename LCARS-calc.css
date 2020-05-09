@@ -1,0 +1,191 @@
+@font-face {
+  src: url(/okuda-font/OkudaBold-qA72.ttf);
+  font-family: okuda;
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Browser Upgrade Prompt */
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* hides an element, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* no break */
+.nobr {
+    white-space: nowrap;
+}
+
+body {
+    background-color: #000000;
+    background-image: url('LCARS-background-clear.png') ;
+    /* original version of background image can be found at: */
+    /* 'https://cdn.hipwallpaper.com/i/28/76/P40qd2.jpg' */
+	background-size: 1200px, 1800px;
+    background-repeat: no-repeat;
+    background-position: top;
+    font-family: okuda;
+}
+
+.main {
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#alert {
+    color: #000000;
+    margin-left: 190px;
+    margin-top: 120px;
+    width: 350px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.container {
+    display:flex;
+    justify-content: center;
+    margin-top: -480px;
+}
+
+.input {
+    background-color: #FFFFFF;
+    width: 325px;
+    height: 60px;
+    font-size: 35px;
+    border-radius: 40px;
+    text-align: right;
+    line-height: 60px;
+    padding-right: 30px;
+    font-family: okuda;
+}
+
+button {
+    border-radius: 40px;
+    height: 60px;
+    width: 80px;
+    margin-top: 10px;
+    font-size: 30px;
+    border: none;
+    background-color: #CC99CC;
+    font-family: okuda;
+}
+
+#zero {
+    width: 160px;
+}
+
+.row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#clear, #point, #equals {
+    background-color: #CC6666;
+}
+
+#divide, #multiply, #subtract, #add {
+    background-color: #FF9900;
+}
+
+.LCARS-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.LCARS-right {
+    display: table;
+    margin-top: -49px;
+    /* position: absolute;
+    right: 10px; */
+    /* display: flex;
+    flex-wrap: wrap; */
+    margin-right: 3px;
+}
+
+#tuvix, #janeway, #all, #lights {
+    width: 180px;
+}
+
+#tuvix, #all {
+    margin-right: 4px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+}
+
+.LCARS-left {
+    margin-top: -105px;
+    margin-left: -39px;
+}
+
+#clearAlert {
+    height: 82px;
+    width: 147px;
+    border-radius: 0;
+}
+
+#hubris {
+    height: 140px;
+    width: 147px;
+    border-radius: 0;
+    margin-top: .1em;
+}
+
+#red {
+    height: 112px;
+    width: 147px;
+    border-radius: 0;
+}
+
+#glory {
+    height: 167px;
+    width: 147px;
+    border-radius: 0;
+    margin-top: -0em;
+}
+
+#karen {
+    height: 50px;
+    width: 147px;
+    border-radius: 0;
+    margin-top: -0em;
+}
+
+#mad {
+    height: 220px;
+    width: 147px;
+    border-radius: 0;
+    margin-top: -0em;
+}
+
+#tuvix, #janeway, #all, #lights, #clearAlert, #hubris, #red, #glory, #karen, #mad {
+    background: transparent;
+    border: none !important;
+}
+
+button:focus {outline:0;}

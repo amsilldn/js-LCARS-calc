@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LCARS Calculator</title>
+    <!-- custom styles -->
+    <link rel="stylesheet" type="text/css" href="LCARS-calc.css">
+    <!-- <script>scr="LCARS-calc.js"</script> -->
+    <script>
+        // code for the calculator
+        function getBtnVal(e) {
+            var btnVal = e.value;
+            if (document.getElementById('in').innerHTML == 0) {
+                document.getElementById('in').innerHTML = btnVal;
+            } else {
+                document.getElementById('in').innerHTML += btnVal;
+            }
+        }
+        function clearInput() {
+            document.getElementById('in').innerHTML = 0;
+        }
+        function calculate() {
+            var equation = document.getElementById('in').innerHTML;
+            var answer = eval(equation);
+            document.getElementById('in').innerHTML = answer;
+        }
+        // code for LCARS buttons
+        function LCARS(v) {
+            var btnVal = v.value;
+            document.getElementById('alert').innerHTML = btnVal.toUpperCase();
+            document.getElementById('alert').style.color = "#FFFFFF";
+            // if (btnVal === "clear alert") {
+            //     clearInterval(w);
+            //     document.body.style.backgroundColor = "#000000";
+            //     document.getElementById('alert').style.color = "#000000";
+            // } else if (btnVal === "red alert") {
+            //     change();
+            // }
+        }
+
+        //change background color for red alert
+        var w;
+        var x;
+        function clearAll() {
+            clearInterval(w);
+            w = 0;
+            document.body.style.backgroundColor = "#000000";
+            document.getElementById('alert').style.color = "#000000";
+            document.getElementById('alert').innerHTML = document.getElementById('clearAlert').value.toUpperCase();
+        }
+        function redAlert() {
+            x = 1;
+            document.getElementById('alert').innerHTML = document.getElementById('red').value.toUpperCase();
+            document.getElementById('alert').style.color = "#FFFFFF";
+            w = setInterval(changeColors, 1000);
+        }
+        function changeColors() {
+            if (x === 1) {
+                color = "#FF0000";
+                x = 2;
+            } else {
+                color = "#000000";
+                x = 1;
+            }
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div id="alert">CLEAR</div>
+        <div class="LCARS-buttons">
+            <div class="LCARS-right">
+                <div class="LCARS-right-top">
+                    <button type="button" id="tuvix" value="tuvix was an abomination" onclick="LCARS(this)"></button>
+                    <button type="button" id="janeway" value="janeway didn't kill Tuvix" onclick="LCARS(this)"></button>
+                </div>
+                <div class="LCARS-right-bottom">
+                    <button type="button" id="all" value="all trek is real trek" onclick="LCARS(this)"></button>
+                    <button type="button" id="lights" value="there are four lights" onclick="LCARS(this)"></button>
+                </div>
+            </div>
+            <div>
+                <ul class="LCARS-left">
+                    <li><button type="button" id="clearAlert" value="clear" onclick="clearAll()"></button></li>
+                    <li><button type="button" id="hubris" value="sheer fucking hubris" onclick="LCARS(this)"></button></li>
+                    <li><button type="button" id="red" value="red alert" onclick="redAlert()"></button></li>
+                    <li><button type="button" id="glory" value="for the glory of the empire" onclick="LCARS(this)"></button></li>
+                    <li><button type="button" id="karen" value="my child" onclick="LCARS(this)"></button></li>
+                    <li><button type="button" id="mad" value="die mad about it" onclick="LCARS(this)"></button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div id="calculator">
+                <div class="input" id="in" maxlength="9" size="6">0</div>
+                <div id="buttons" class="buttons">
+                    <div class="row1">
+                        <button type="button" id="clear" value="C" onclick="clearInput()">C</button>
+                        <button type="button" id="divide" value="/" onclick="getBtnVal(this)">/</button>
+                    </div>
+                    <div class="row2">
+                        <button type="button" id="seven" value="7" onclick="getBtnVal(this)">7</button>
+                        <button type="button" id="eight" value="8" onclick="getBtnVal(this)">8</button>
+                        <button type="button" id="nine" value="9" onclick="getBtnVal(this)">9</button>
+                        <button type="button" id="multiply" value="*" onclick="getBtnVal(this)">*</button>
+                    </div>
+                    <div class="row3">
+                        <button type="button" id="four" value="4" onclick="getBtnVal(this)">4</button>
+                        <button type="button" id="five" value="5" onclick="getBtnVal(this)">5</button>
+                        <button type="button" id="six" value="6" onclick="getBtnVal(this)">6</button>
+                        <button type="button" id="subtract" value="-" onclick="getBtnVal(this)">-</button>
+                    </div>
+                    <div class="row4">
+                        <button type="button" id="one" value="1" onclick="getBtnVal(this)">1</button>
+                        <button type="button" id="two" value="2" onclick="getBtnVal(this)">2</button>
+                        <button type="button" id="three" value="3" onclick="getBtnVal(this)">3</button>
+                        <button type="button" id="add" value="+" onclick="getBtnVal(this)">+</button>
+                    </div>
+                    <div class="row5">
+                        <button type="button" id="zero" value="0" onclick="getBtnVal(this)">0</button>
+                        <button type="button" id="point" value="." onclick="getBtnVal(this)">.</button>
+                        <button type="button" id="equals" value="=" onclick="calculate(this)">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
